@@ -1,0 +1,5 @@
+sources:
+  - name: hq_archive
+    handler:
+      graphql:
+        endpoint: http://localhost:5999/graphql
