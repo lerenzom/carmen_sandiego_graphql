@@ -1,0 +1,30 @@
+sources:
+  - name: hq_archive
+    handler:
+      graphql:
+        endpoint: http://localhost:5999/graphql
+
+  - name: bofa_nyc
+    handler:
+      postgraphile:
+        connectionString: postgres://user:password@localhost:6001/bofa_nyc
+
+  - name: moma_pg
+    handler:
+      postgraphile:
+        connectionString: postgres://user:password@localhost:6002/moma
+
+  - name: socialite_media
+    handler:
+      postgraphile:
+        connectionString: postgres://user:password@localhost:6003/socialite_media
+
+  - name: tech_forum
+    handler:
+      postgraphile:
+        connectionString: postgres://user:password@localhost:6004/tech_forum
+
+  - name: bofa_london
+    handler:
+      postgraphile:
+        connectionString: postgres://user:password@localhost:6005/bofa_london

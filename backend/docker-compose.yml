@@ -1,4 +1,48 @@
 version: '3.8'
 
-include:
-  - services/hq/docker-compose.yml
+services:
+
+  bofa-nyc-pg:
+    image: postgres:16
+    ports:
+      - "${BOFA_NYC_PG}:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${BOFA_NYC_PG_DB}
+
+  moma-pg:
+    image: postgres:16
+    ports:
+      - "${MOMA_PG}:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${MOMA_PG_DB}
+
+  socialite-media-pg:
+    image: postgres:16
+    ports:
+      - "${SOCIALITE_MEDIA_PG}:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${SOCIALITE_MEDIA_PG_DB}
+
+  tech-forum-pg:
+    image: postgres:16
+    ports:
+      - "${TECH_FORUM_PG}:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${TECH_FORUM_PG_DB}
+
+  bofa-london-pg:
+    image: postgres:16
+    ports:
+      - "${BOFA_LONDON_PG}:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${BOFA_LONDON_PG_DB}
