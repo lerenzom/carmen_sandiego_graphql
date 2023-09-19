@@ -1,0 +1,4 @@
+version: '3.8'
+
+include:
+  - services/hq/docker-compose.yml
