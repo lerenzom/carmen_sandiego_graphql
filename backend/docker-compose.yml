@@ -9,7 +9,8 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: ${BOFA_NYC_PG_DB}
+    volumes:
+      - ./db_dumps/bofa_nyc:/docker-entrypoint-initdb.d
 
   moma-pg:
     image: postgres:16
@@ -18,7 +19,8 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: ${MOMA_PG_DB}
+    volumes:
+      - ./db_dumps/moma:/docker-entrypoint-initdb.d
 
   socialite-media-pg:
     image: postgres:16
@@ -27,7 +29,8 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: ${SOCIALITE_MEDIA_PG_DB}
+    volumes:
+      - ./db_dumps/socialite_media:/docker-entrypoint-initdb.d
 
   tech-forum-pg:
     image: postgres:16
@@ -36,7 +39,8 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: ${TECH_FORUM_PG_DB}
+    volumes:
+      - ./db_dumps/tech_forum:/docker-entrypoint-initdb.d
 
   bofa-london-pg:
     image: postgres:16
@@ -45,4 +49,5 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: ${BOFA_LONDON_PG_DB}
+    volumes:
+      - ./db_dumps/bofa_london:/docker-entrypoint-initdb.d
