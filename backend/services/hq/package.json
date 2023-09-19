@@ -4,10 +4,11 @@
   "scripts": {
     "mesh:build": "mesh build",
     "mesh:serve": "mesh dev",
-    "start:hq": "ts-node server.ts"
+    "start:hq": "ts-node server.ts",
+    "run:scratch": "ts-node scratch.ts"
   },
   "dependencies": {
-    "apollo-server": "3.12.1",
+    "@faker-js/faker": "^8.0.2",
     "@graphql-mesh/cache-file": "0.95.4",
     "@graphql-mesh/cli": "0.87.8",
     "@graphql-mesh/config": "0.97.7",
@@ -15,9 +16,12 @@
     "@graphql-mesh/postgraphile": "0.95.4",
     "@graphql-mesh/runtime": "0.96.5",
     "@graphql-mesh/transform-prefix": "0.95.4",
-    "graphql": "16.8.0"
+    "apollo-server": "3.12.1",
+    "graphql": "16.8.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.198",
     "@types/node": "18.17.17",
     "cross-env": "7.0.3",
     "nodemon": "^3.0.1",
